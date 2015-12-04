@@ -1,0 +1,18 @@
+{% capture compress %}
+{% assign temp1 = content | split: '<pre>' %}
+{% for temp2 in temp1 %}
+{% assign temp3 = temp2 | split: '</pre>' %}
+{% if temp3.size == 2 %}
+<pre>{{ temp3.first | newline_to_br }}</pre>
+{% endif %}
+{% assign t = temp3.last %}
+{% assign t = t | replace: ' a ', ' a&nbsp;' | replace: ' i ', ' i&nbsp;' | replace: ' o ', ' o&nbsp;' | replace: ' u ', ' u&nbsp;' | replace: ' w ', ' w&nbsp;' | replace: ' z ', ' z&nbsp;' | replace: ' A ', ' A&nbsp;' | replace: ' I ', ' I&nbsp;' | replace: ' O ', ' O&nbsp;' | replace: ' U ', ' U&nbsp;' | replace: ' W ', ' W&nbsp;' | replace: ' Z ', ' Z&nbsp;' %}
+{% assign t = t | replace: ' - ', '&nbsp;&ndash; ' | replace: ' – ', '&nbsp;&ndash; ' | replace: ' &ndash; ', '&nbsp;&ndash; ' %}
+{% if page.lang == 'pl' %}
+{% assign t = t | replace: '&ldquo;' , '&bdquo;' %}
+{% endif %}
+{% assign t = t | replace: ' ,' , ',' | replace: ' .' , '.' | replace: ' ?' , '?' | replace: ' !' , '!' %}
+{% assign t = t | replace: ' </p>' , '</p>' | replace: ' </li>' , '</li>' | replace: ' </h1>' , '</h1>' | replace: ' </h2>' , '</h2>' | replace: ' </h3>' , '</h3>' %}
+{{ t | split: ' ' | join: ' ' }}
+{% endfor %}
+{% endcapture %}{{ compress | strip_newlines }}
