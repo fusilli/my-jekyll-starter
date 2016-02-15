@@ -8,3 +8,6 @@ defaults:
       path: ""
     values:
       layout: "default"
+exclude: [node_modules, gulpfile.js, package.json]
+gems:
+  - octopress-autoprefixer

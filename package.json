@@ -1,0 +1,29 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "browsersync-for-jekyll",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fusilli/my-jekyll-starter.git"
+  },
+  "keywords": [
+    "jekyll",
+    "browsersync"
+  ],
+  "author": "fusilli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fusilli/my-jekyll-starter/issues"
+  },
+  "homepage": "https://github.com/fusilli/my-jekyll-starter#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
+    "lodash": "^4.3.0"
+  }
+}
